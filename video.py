@@ -6,19 +6,19 @@ import os
 
 #reading label name from obj.names file
 class_name = []
-with open(os.path.join("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\project_files",'obj.names'), 'r') as f:
+with open(os.path.join("pothole-detection\\project_files",'obj.names'), 'r') as f:
     class_name = [cname.strip() for cname in f.readlines()]
 
 #importing model weights and config file
 #defining the model parameters
-net1 = cv.dnn.readNet("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\project_files\\yolov4_tiny.weights","C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\project_files\\yolov4_tiny.cfg")
+net1 = cv.dnn.readNet("pothole-detection\\project_files\\yolov4_tiny.weights","pothole-detection\\project_files\\yolov4_tiny.cfg")
 net1.setPreferableBackend(cv.dnn.DNN_BACKEND_CUDA)
 net1.setPreferableTarget(cv.dnn.DNN_TARGET_CUDA_FP16)
 model1 = cv.dnn_DetectionModel(net1)
 model1.setInputParams(size=(640, 480), scale=1/255, swapRB=True)
 
 #defining the video source (0 for camera or file \name for video)
-cap = cv.VideoCapture("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\demo.mp4") 
+cap = cv.VideoCapture("pothole-detection\\demo.mp4") 
 width  = cap.get(3)
 height = cap.get(4)
 result = cv.VideoWriter('result.avi', 
