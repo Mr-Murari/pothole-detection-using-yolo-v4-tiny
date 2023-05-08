@@ -6,12 +6,12 @@ import os
 
 #reading label name from obj.names file
 class_name = []
-with open(os.path.join("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\project_files",'obj.names'), 'r') as f:
+with open(os.path.join("pothole-detection\\project_files",'obj.names'), 'r') as f:
     class_name = [cname.strip() for cname in f.readlines()]
 
 #importing model weights and config file
 #defining the model parameters
-net1 = cv.dnn.readNet("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\project_files\\yolov4_tiny.weights","C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\project_files\\yolov4_tiny.cfg")
+net1 = cv.dnn.readNet("pothole-detection\\project_files\\yolov4_tiny.weights","pothole-detection\\project_files\\yolov4_tiny.cfg")
 net1.setPreferableBackend(cv.dnn.DNN_BACKEND_CUDA)
 net1.setPreferableTarget(cv.dnn.DNN_TARGET_CUDA_FP16)
 model1 = cv.dnn_DetectionModel(net1)
