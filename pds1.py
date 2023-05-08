@@ -8,26 +8,26 @@ root.title("Pothole Detection System")
 
 
 def image():
-    with open("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\image.py", "r") as f:
+    with open("pothole-detection\\image.py", "r") as f:
         script_code = f.read()
     # Execute the script code
     exec(script_code)
 
 def video():
-    with open("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\video.py", "r") as f:
+    with open("pothole-detection\\video.py", "r") as f:
         script_code = f.read()
     # Execute the script code
     exec(script_code)
 
 def camera():
-    with open("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\camera.py", "r") as f:
+    with open("pothole-detection\\camera.py", "r") as f:
         script_code = f.read()
     # Execute the script code
     exec(script_code)
     
 
 #logo
-logo=Image.open("C:\\Users\\MURARI\\Desktop\\POTHOLE\\pothole-detection\\logo.jfif")
+logo=Image.open("pothole-detection\\logo.jfif")
 logo=ImageTk.PhotoImage(logo)
 logo_label=tk.Label(image=logo)
 logo_label.image=logo
